@@ -1,0 +1,21 @@
+{
+  "name": "chasma",
+  "version": "0.0.1",
+  "description": "Application Screen Management",
+  "main": "src/index.js",
+  "scripts": {
+    "compile": "browserify -t babelify src/index.js -o lib/chasma.js",
+    "prepublish": "npm run compile"
+  },
+  "author": "Joseph Werle <werle@littlstar.com>",
+  "license": "MIT",
+  "dependencies": {
+    "batch": "^0.5.3",
+    "regenerator": "^0.8.41"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "uglify": "^0.1.5"
+  }
+}
