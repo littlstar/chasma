@@ -1317,6 +1317,7 @@ function createApplication() {
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+var _bind = Function.prototype.bind;
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -1467,17 +1468,20 @@ var ScreenFactory = (function () {
    * @public
    * @method
    * @name createScreen
-   * @param {Object} opts
+   * @param {Screen} [parent]
+   * @param {Object} [opts]
+   * @param {Array} [children]
    * @return Screen
    */
 
   _createClass(ScreenFactory, [{
     key: 'createScreen',
     value: function createScreen() {
-      var opts = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
 
-      var screen = new Screen(this, opts);
-      return screen;
+      return new (_bind.apply(Screen, [null].concat(args)))();
     }
   }]);
 
@@ -1493,26 +1497,17 @@ var Screen = (function () {
    *
    * @public
    * @constructor
-   * @param {ScreenFactory} factory
+   * @param {Screen} [parent = null]
+   * @param {Object} [data = {}]
    * @param {iterable} [children = []]
    */
 
   function Screen() {
-    var factory = arguments.length <= 0 || arguments[0] === undefined ? new ScreenFactory() : arguments[0];
+    var parent = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
     var data = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
     var children = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
 
     _classCallCheck(this, Screen);
-
-    /**
-     * This Screen instance's ScreenFactory
-     * instance.
-     *
-     * @public
-     * @type ScreenFactory
-     */
-
-    this.factory = factory || ScreenFactory.sharedInstance();
 
     /**
      * Parent screen if available.

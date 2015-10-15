@@ -133,13 +133,14 @@ export class ScreenFactory {
    * @public
    * @method
    * @name createScreen
-   * @param {Object} opts
+   * @param {Screen} [parent]
+   * @param {Object} [opts]
+   * @param {Array} [children]
    * @return Screen
    */
 
-  createScreen (opts = {}) {
-    const screen = new Screen(this, opts);
-    return screen;
+  createScreen (...args) {
+    return new Screen(...args);
   }
 }
 
@@ -157,21 +158,12 @@ export class Screen {
    *
    * @public
    * @constructor
-   * @param {ScreenFactory} factory
+   * @param {Screen} [parent = null]
+   * @param {Object} [data = {}]
    * @param {iterable} [children = []]
    */
 
-  constructor (factory = new ScreenFactory(), data = {}, children = []) {
-
-    /**
-     * This Screen instance's ScreenFactory
-     * instance.
-     *
-     * @public
-     * @type ScreenFactory
-     */
-
-    this.factory = factory || ScreenFactory.sharedInstance();
+  constructor (parent = null, data = {}, children = []) {
 
     /**
      * Parent screen if available.
