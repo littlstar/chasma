@@ -16,6 +16,6 @@
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
-    "uglify": "^0.1.5"
+    "uglifyjs": "^2.4.10"
   }
 }

@@ -35,8 +35,7 @@ $(NODE_MODULES): package.json
 .PHONY: dist
 dist: default
 	mkdir -p $(@)
-	$(BROWSERIFY) --im -s $(STANDALONE) -t babelify lib/index.js -o $@/$(STANDALONE).js
-	$(UGLIFY) --compress --mangle --output $@/$(STANDALONE).js -- $@/$(STANDALONE).js
+	$(UGLIFY) --compress --mangle --output $@/$(STANDALONE).js -- lib/$(STANDALONE).js
 
 clean:
 	$(RM) -rf lib/

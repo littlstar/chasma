@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-import {Screen, ScreenFactory} from './screen';
+import {Screen} from './screen';
 import Application from './application';
 
 /**
@@ -12,7 +12,6 @@ import Application from './application';
  */
 
 export {
-  ScreenFactory,
   Application,
   Screen,
 };

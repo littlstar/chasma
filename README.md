@@ -77,7 +77,7 @@ class MenuItem extends BaseScreen {
 
 and our menu class would look like this:
 
-```
+```js
 class Menu extends BaseScreen {
   constructor () {
     super(createDom('<ul class="items"></ul'));
