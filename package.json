@@ -1,6 +1,6 @@
 {
   "name": "chasma",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Application Screen Management",
   "main": "lib/index.js",
   "scripts": {
