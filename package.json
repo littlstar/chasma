@@ -1,8 +1,8 @@
 {
   "name": "chasma",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Application Screen Management",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "compile": "browserify -t babelify src/index.js -o lib/chasma.js",
     "prepublish": "npm run compile"
