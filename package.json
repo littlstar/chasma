@@ -4,7 +4,7 @@
   "description": "Application Screen Management",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "browserify -t babelify src/index.js -o lib/chasma.js",
+    "compile": "browserify -t babelify src/index.js -o lib/index.js",
     "prepublish": "npm run compile"
   },
   "author": "Joseph Werle <werle@littlstar.com>",
