@@ -1,12 +1,6 @@
 'use strict';
 
 /**
- * Module dependencies.
- */
-
-require('regenerator/runtime');
-
-/**
  * children property symbol
  *
  * @private
