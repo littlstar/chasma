@@ -1,0 +1,11 @@
+{
+  "name": "chasma",
+  "version": "0.1.1",
+  "description": "Application Screen Management",
+  "main": "src/index.js",
+  "scripts": [
+    "src/index.js",
+    "src/screen.js",
+    "src/application.js"
+  ]
+}
