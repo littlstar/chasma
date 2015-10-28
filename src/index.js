@@ -13,7 +13,7 @@ import Application from './application';
 
 export {
   Application,
-  Screen,
+  Screen
 };
 
 /**
